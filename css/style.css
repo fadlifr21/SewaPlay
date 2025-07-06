@@ -1,0 +1,1902 @@
+:root {
+    --primary-blue: #003893;
+    --secondary-orange: #e6960e;
+    --accent-yellow: #ffc107;
+    --text-dark: #333;
+    --text-medium: #555;
+    --text-light: #ccc;
+    --bg-light: #f0f2f5;
+    --bg-white: #fff;
+    --bg-dark: #1a1a1a;
+    --btn-shadow-orange: rgba(230, 150, 14, 0.3);
+    --btn-shadow-blue: rgba(0, 56, 147, 0.3);
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-poppins);
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    background: var(--bg-white);
+    color: var(--bg-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.navbar .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-medium);
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: left;
+    padding: 120px 50px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('../img/bg.webp') center/cover no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 56px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.hero p {
+    font-size: 19px;
+    max-width: 650px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.pberanda {
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 19px;
+}
+
+/* --- General Button Styles --- */
+.btn {
+    background-color: var(--secondary-orange);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    box-shadow: 0 6px 20px var(--btn-shadow-orange);
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    transition: all 0.3s ease, outline-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e3770b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230, 150, 14, 0.45);
+    outline-color: #e3770b;
+}
+
+/* --- Card Section (Perangkat) Styles --- */
+.cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
+.cards-section h2{
+    padding-top: 40px;
+    color: var(--bg-dark);
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.card-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--bg-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    width: 350px;
+    min-height: 400px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.card.aos-animate:hover {
+    transform: translateY(-10px) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-left, .card-center, .card-right, .card-comingsoon {
+    background-color: var(--bg-white);
+    color: white; /* Base text color for cards with background images */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.card-left { background-image: url('../img/ps4.webp'); }
+.card-center { background-image: url('../img/ps5pro.webp'); }
+.card-right { background-image: url('../img/monitor.webp'); }
+.card-comingsoon {
+    background-image: url('../img/vr.webp');
+    color: var(--text-medium); /* Specific for coming soon */
+    backdrop-filter: blur(2px);
+    position: relative;
+    cursor: not-allowed;
+    filter: grayscale(1);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.card-left .card-content,
+.card-center .card-content,
+.card-right .card-content,
+.card-comingsoon .card-content {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+}
+.card-left .card-content h2,
+.card-center .card-content h2,
+.card-right .card-content h2 {
+    color: #fff;
+}
+
+
+.card h2 {
+    font-size: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.card p {
+    font-size: 1em;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.premium-tag, .extra-tag, .comingsoon-tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #fff;
+    display: inline-block;
+}
+
+.premium-tag { background-color: #e60023; }
+.extra-tag { background-color: #0070d1; }
+.comingsoon-tag {
+    background-color: var(--text-medium);
+    padding: 6px 12px;
+    border-radius: 20px;
+    top: 20px;
+    left: 20px;
+}
+
+/* --- General Section Styles --- */
+.section {
+    padding: 80px 40px;
+}
+
+.section h2 {
+    color: var(--bg-dark);
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+/* --- Price Section (#harga) Styles --- */
+#harga {
+    background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+    );
+}
+
+.price-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.price-card {
+    background: var(--bg-white);
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.price-card.aos-animate:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-title {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.price-detail p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.price-card.highlight {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.price-card.highlight .price-title {
+    color: var(--accent-yellow);
+}
+
+.price-card.highlight .price-detail p {
+    color: #eee;
+}
+
+.best-tag {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--accent-yellow);
+    color: var(--bg-dark);
+    padding: 5px 12px;
+    font-size: 0.8em;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.comingsoon-card {
+    opacity: 0.6;
+    filter: grayscale(1);
+    position: relative;
+    pointer-events: none;
+    background: #f1f1f1;
+}
+
+.comingsoon-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--text-medium);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* --- Game Section (#games) Styles --- */
+.game-section {
+    padding: 90px 40px;
+    background-color: var(--bg-dark);
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.game-section-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.game-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.game-tab-button {
+    background-color: #333;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 25px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.game-tab-button:hover {
+    background-color: #555;
+}
+
+.game-tab-button.active {
+    background-color: #ffffff;
+    color: var(--bg-dark);
+    font-weight: 700;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.game-card.aos-animate:hover {
+    transform: translateY(-10px) scale(1.05) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.game-title {
+    color: #ffffff;
+    font-size: 1.1em;
+    margin-top: 15px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* --- Cara Penyewaan (#cara) & Kontak (#kontak) Styles --- */
+#cara, #kontak {
+    padding: 90px;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+#cara ol {
+    list-style: decimal;
+    margin: 0 auto;
+    max-width: 700px;
+    padding-left: 30px;
+    color: var(--text-medium);
+    font-size: 1.15em;
+    line-height: 1.8;
+}
+
+#cara ol li {
+    margin-bottom: 12px;
+}
+
+.how-to-rent-section { /* Not used in provided HTML, keeping for reference */
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--primary-blue);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Overrides general .section h2, but specific to .section h2 which is common */
+.section h2 {
+    color: var(--bg-dark);
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+/* Multi-Step Indicator Styles */
+.multi-step-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.progress-line {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    height: 3px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--secondary-orange);
+    transition: width 0.4s ease-in-out;
+}
+
+.step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.step-item.active .icon-wrapper {
+    background-color: var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    color: white;
+}
+
+.step-item.active .step-title {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.step-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-medium);
+    transition: color 0.3s ease;
+}
+
+.step-details-container {
+    background-color: var(--bg-white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.step-detail-content {
+    display: none;
+    text-align: center;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.step-detail-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-detail-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.step-detail-content p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+.step-detail-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.step-detail-content a:hover {
+    text-decoration: underline;
+}
+
+/* Kontak Section Styles */
+#kontak p {
+    margin-bottom: 12px;
+    color: var(--text-medium);
+    font-size: 1.15em;
+    text-align: center;
+}
+
+#kontak p i {
+    margin-right: 12px;
+    color: var(--primary-blue);
+    font-size: 1.3em;
+}
+
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-card {
+    background-color: var(--bg-white);
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.contact-card.aos-animate:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card i {
+    font-size: 2.5em;
+    color: var(--secondary-orange);
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.contact-card p {
+    font-size: 1.05em;
+}
+
+.contact-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-card a:hover {
+    text-decoration: none;
+}
+
+/* --- Footer Styles --- */
+.site-footer {
+    background-color: #002b70;
+    color: white;
+    padding: 60px 20px 30px;
+    font-family: var(--font-poppins);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-brand h3 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    color: var(--accent-yellow);
+}
+
+.footer-brand p {
+    font-size: 15px;
+    color: var(--text-light);
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: var(--accent-yellow);
+    letter-spacing: 0.5px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-yellow);
+}
+
+.social-icons a {
+    font-size: 1.6em;
+    color: var(--text-light);
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-yellow);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #fff;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* --- Login/Register/Order/Admin Form Sections (Unified Styles) --- */
+.login-section, .register-section, .admin-login-section {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust as needed */
+    background: var(--bg-light); /* Matches body background */
+    padding: 40px 20px;
+    /* --- Tambahan untuk gambar latar belakang --- */
+    background-image: url('../img/log.png'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Pusatkan gambar */
+    background-repeat: no-repeat; /* Hindari pengulangan gambar */
+    position: relative; /* Penting untuk overlay */
+}
+
+/* Overlay untuk latar belakang gambar agar teks lebih mudah dibaca */
+.login-section::before, .register-section::before, .admin-login-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Di bawah .login-container tapi di atas gambar */
+}
+.order-section {
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust as needed */
+    background: var(--bg-light); /* Matches body background */
+    padding: 40px 20px;
+    /* --- Tambahan untuk gambar latar belakang --- */
+    background-image: url('../img/beli.png'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Pusatkan gambar */
+    background-repeat: no-repeat; /* Hindari pengulangan gambar */
+    position: relative; /* Penting untuk overlay */
+}
+.order-section::before,{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Di bawah .login-container tapi di atas gambar */
+}
+
+
+
+.register-section { /* Adjust height for longer register form */
+    min-height: 100vh;
+}
+
+.order-section { /* Adjust height for order form */
+    min-height: 90vh;
+}
+
+.login-container, .register-container, .order-container, .admin-login-container {
+    position: relative; /* Agar z-index bekerja */
+    z-index: 2; /* Di atas overlay */
+    background: var(--bg-white); /* Form background tetap putih */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.register-container { /* Wider for register form */
+    max-width: 500px;
+}
+
+.order-container { /* Wider for order form */
+    max-width: 600px;
+}
+
+.login-container h2, .register-container h2, .order-container h2, .admin-login-container h2 {
+    font-size: 2.2em;
+    color: var(--primary-blue); /* Matches primary blue color */
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Input Group Styles (Unified) */
+.login-form .input-group, .register-form .input-group, .order-form .input-group, .admin-login-form .input-group, .add-form .input-group {
+    margin-bottom: 20px; /* Default margin-bottom */
+    text-align: left;
+}
+/* Specific adjustment for add-form inputs */
+.add-form .input-group {
+    margin-bottom: 15px;
+}
+
+/* Label Styles (Unified) */
+.login-form label, .register-form label, .order-form label, .admin-login-form label, .add-form label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+/* Specific adjustment for add-form labels */
+.add-form label {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+/* Input Field Styles (Unified) */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form textarea,
+.order-form input[type="date"],
+.order-form select,
+.order-form textarea,
+.order-form input[type="number"],
+.admin-login-form input[type="text"],
+.admin-login-form input[type="password"],
+.add-form input[type="text"],
+.add-form input[type="number"],
+.add-form select,
+.add-form textarea { /* Unified style for all text-like inputs and selects */
+    width: 100%;
+    padding: 14px 18px; /* Default padding for most inputs */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Smaller padding for admin add forms */
+.add-form input[type="text"], .add-form input[type="number"], .add-form select, .add-form textarea {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+/* Specific for action forms select/button */
+.action-form select, .action-form button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.85em;
+}
+
+
+/* Focus Styles (Unified) */
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus,
+.register-form input[type="text"]:focus,
+.register-form input[type="email"]:focus,
+.register-form input[type="password"]:focus,
+.register-form textarea:focus,
+.order-form input[type="date"]:focus,
+.order-form select:focus,
+.order-form textarea:focus,
+.order-form input[type="number"]:focus,
+.admin-login-form input[type="text"]:focus,
+.admin-login-form input[type="password"]:focus,
+.add-form input[type="text"]:focus,
+.add-form input[type="number"]:focus,
+.add-form select:focus,
+.add-form textarea:focus {
+    border-color: var(--primary-blue); /* Focus color */
+    box-shadow: 0 0 0 3px rgba(0, 56, 147, 0.2); /* Soft blue glow on focus */
+    outline: none;
+}
+
+/* Textarea Specifics */
+.register-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.order-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Button Styles (Unified where possible, adjusted where different) */
+.login-form .login-btn { /* Specific styles for login btn */
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: var(--secondary-orange);
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px var(--btn-shadow-orange);
+}
+
+.login-form .login-btn:hover {
+    background-color: #e3770b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230, 150, 14, 0.45);
+    outline-color: #e3770b;
+}
+
+.register-form .register-btn { /* Reusing btn styles, specific margin/padding */
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: var(--secondary-orange);
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px var(--btn-shadow-orange);
+}
+
+.register-form .register-btn:hover {
+    background-color: #e3770b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230, 150, 14, 0.45);
+}
+
+.order-form .order-btn { /* Reusing btn styles, specific margin/padding */
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px var(--btn-shadow-blue);
+}
+
+.order-form .order-btn:hover {
+    background-color: #002b70;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 56, 147, 0.45);
+}
+
+.admin-login-form .login-btn { /* Specific for admin login button */
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: var(--secondary-orange);
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px var(--btn-shadow-orange);
+}
+.admin-login-form .login-btn:hover {
+    background-color: #e3770b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(230, 150, 14, 0.45);
+}
+
+/* Message Styles (Unified) */
+.message-success {
+    color: green;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.message-error {
+    color: red;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Form Footer Styles (Unified) */
+.login-form .form-footer, .register-form .form-footer {
+    margin-top: 25px;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.login-form .form-footer a, .register-form .form-footer a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-form .form-footer a:hover, .register-form .form-footer a:hover {
+    color: var(--secondary-orange);
+    text-decoration: underline;
+}
+
+/* Specific for Item/Game selection grid (reused in order.php) */
+.item-selection-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+.item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+.item-row select, .item-row input[type="number"] {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+.remove-item-btn {
+    background-color: #e60023;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.remove-item-btn:hover {
+    background-color: #cc001f;
+}
+.add-item-btn {
+    background-color: var(--secondary-orange);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+.add-item-btn:hover {
+    background-color: #e3770b;
+}
+
+/* Admin Specific Styles (from dashboard.php, perangkat.php, items.php, games.php) */
+.admin-navbar {
+    background: #333;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.admin-navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-yellow);
+}
+.admin-navbar .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.admin-navbar .nav-links a:hover {
+    color: var(--accent-yellow);
+}
+.admin-dashboard-section, .admin-content-section {
+    padding: 40px 20px;
+    max-width: 1200px; /* Wider for dashboard/content */
+    margin: 20px auto;
+    background: var(--bg-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+.admin-content-section { /* Specific max-width for content sections */
+    max-width: 1000px;
+}
+.admin-dashboard-section h2, .admin-content-section h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95em;
+}
+.admin-table th {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.admin-table tr:hover {
+    background-color: #e9e9e9;
+}
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+    font-size: 0.85em;
+}
+/* Specific status colors */
+.status-Pending { background-color: var(--accent-yellow); }
+.status-Dikonfirmasi { background-color: #28a745; }
+.status-Selesai { background-color: #007bff; }
+.status-Dibatalkan { background-color: #dc3545; }
+.status-MenungguPembayaran { background-color: #6c757d; }
+.status-Tersedia { background-color: #28a745; }
+.status-Disewa { background-color: var(--accent-yellow); }
+.status-Rusak { background-color: #dc3545; }
+.status-TidakTersedia { background-color: #dc3545; }
+.status-Aktif { background-color: #28a745; }
+.status-TidakAktif { background-color: #dc3545; }
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+.action-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-weight: 700;
+}
+.btn-confirm { background-color: #28a745; }
+.btn-confirm:hover { background-color: #218838; }
+.btn-complete { background-color: #007bff; }
+.btn-complete:hover { background-color: #0056b3; }
+.btn-cancel { background-color: #dc3545; }
+.btn-cancel:hover { background-color: #c82333; }
+
+/* Admin footer */
+.admin-site-footer .footer-bottom.admin-footer { /* Specific style for admin footer if needed */
+    padding-top: 30px;
+    padding: 60px 20px 30px;
+    border-top: none;
+    margin-top: 20px;
+    background-color: #333;
+    color: #aaa;
+    text-align: center;
+}
+
+.action-form { /* Reused for update status dropdowns in admin */
+    display: inline-block;
+    margin-left: 5px;
+}
+.action-form select, .action-form button { /* Reused from other contexts, keeping for specificity */
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 0.85em;
+}
+.action-form button {
+    background-color: var(--primary-blue);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.action-form button:hover {
+    background-color: #002b70;
+}
+
+/* Add Form Containers (Unified) */
+.add-form-container {
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    text-align: left;
+}
+.add-form-container h3 {
+    color: var(--secondary-orange);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+.add-form .input-group {
+    margin-bottom: 15px;
+}
+.add-form input[type="text"],
+.add-form input[type="number"],
+.add-form textarea,
+.add-form select { /* Specific padding for add form inputs */
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.add-form textarea { /* Specific textarea height for add forms */
+    min-height: 80px;
+    resize: vertical;
+}
+.add-form button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #28a745; /* Green for add buttons */
+    margin-top: 10px;
+}
+.add-form button:hover {
+    background-color: #218838;
+}
+
+.price-inputs { /* For price inputs in paketSewa add form */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.price-inputs .input-group {
+    margin-bottom: 0;
+}
+
+.game-img-preview { /* For game cover images in admin/games.php table */
+    max-width: 80px;
+    height: auto;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Detail section for admin order_detail.php */
+.detail-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: var(--bg-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+.detail-section h2 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+.detail-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+.detail-group h3 {
+    color: var(--secondary-orange);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.detail-row {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+.detail-row .label {
+    font-weight: 700;
+    color: var(--text-dark);
+    width: 150px;
+    flex-shrink: 0;
+}
+.detail-row .value {
+    color: var(--text-medium);
+    flex-grow: 1;
+}
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.items-table th, .items-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9em;
+}
+.items-table th {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* Responsive adjustments (Consolidated) */
+@media (max-width: 600px) {
+    .login-container, .register-container, .order-container, .admin-login-container {
+        padding: 30px 25px;
+    }
+
+    .login-container h2, .register-container h2, .order-container h2, .admin-login-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"],
+    .register-form input[type="text"],
+    .register-form input[type="email"],
+    .register-form input[type="password"],
+    .register-form textarea,
+    .order-form input[type="date"],
+    .order-form select,
+    .order-form textarea,
+    .order-form input[type="number"],
+    .admin-login-form input[type="text"],
+    .admin-login-form input[type="password"],
+    .add-form input[type="text"],
+    .add-form input[type="number"],
+    .add-form textarea,
+    .add-form select {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .login-form .login-btn,
+    .register-form .register-btn,
+    .order-form .order-btn,
+    .admin-login-form .login-btn,
+    .add-form button {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+
+    .item-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .item-row select, .item-row input[type="number"] {
+        width: 100%;
+    }
+    .admin-content-section h2 {
+        font-size: 2em;
+    }
+    .admin-navbar {
+        padding: 15px 20px;
+    }
+    .admin-navbar .nav-links a {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Media query adjustments specifically for multi-step-indicator */
+@media (max-width: 768px) {
+    .multi-step-indicator {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+
+    .step-item {
+        margin-bottom: 40px;
+    }
+
+    .step-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .progress-line {
+        top: 50px;
+        left: 50%;
+        right: auto;
+        bottom: 50px;
+        width: 3px;
+        height: calc(100% - 100px);
+        transform: translateX(-50%);
+    }
+
+    .step-details-container {
+        padding: 20px;
+        min-height: unset;
+    }
+
+    .step-detail-content {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* =============================================== */
+/* --- STYLE BARU UNTUK HALAMAN AKUN PENGGUNA --- */
+/* =============================================== */
+
+/* --- Latar Belakang dan Kontainer Utama --- */
+.account-section {
+    padding: 50px 20px;
+    min-height: 80vh;
+    background-image: url('../img/sewa.png'); /* GANTI PATH INI JIKA GAMBAR ANDA BERBEDA */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Wajib ada untuk memposisikan overlay */
+}
+.account-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Posisikan overlay di belakang konten */
+}
+
+.account-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative; /* Wajib ada agar z-index berfungsi */
+    z-index: 2; /* Posisikan kontainer di depan overlay */
+}
+
+.account-title {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* --- Gaya untuk Kartu Konten (Profil & Riwayat) --- */
+.account-card {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.account-card h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--secondary-orange);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- Gaya Spesifik untuk Detail Profil --- */
+.profile-details .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom */
+    gap: 20px 30px; /* Jarak antar baris dan kolom */
+}
+
+.profile-details .detail-item {
+    display: flex;
+    flex-direction: column; /* Label di atas, value di bawah */
+    gap: 5px;
+}
+
+.profile-details .detail-item.full-width {
+    grid-column: 1 / -1; /* Membuat item alamat memakan lebar penuh */
+}
+
+.profile-details .detail-item strong {
+    font-size: 0.9em;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.profile-details .detail-item span {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    word-break: break-word;
+}
+
+.profile-details .detail-item span.alamat {
+    line-height: 1.6;
+    font-size: 1.05em;
+}
+
+/* --- Gaya untuk Tabel Riwayat Pesanan --- */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.order-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.order-history-table th, .order-history-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.order-history-table th {
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    border-top: 1px solid #e9ecef;
+}
+
+.order-history-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* --- Pesan Jika Tidak Ada Pesanan --- */
+.no-orders-message {
+    text-align: center;
+    padding: 40px !important;
+    color: #777;
+}
+
+.no-orders-message i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    display: block;
+    color: #ccc;
+}
+
+.no-orders-message p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn-order-now {
+    background-color: var(--secondary-orange);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-order-now:hover {
+    background-color: #e3770b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 150, 14, 0.3);
+}
+
+/* --- Penyesuaian Responsif untuk Halaman Akun --- */
+@media (max-width: 768px) {
+    .profile-details .detail-grid {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    }
+    .account-card {
+        padding: 20px;
+    }
+    .account-title {
+        font-size: 2em;
+    }
+    .account-card h3 {
+        font-size: 1.5em;
+    }
+}
+
+.navbar .logo {
+    text-decoration: none; 
+}
+
+/* --- Style untuk Section Kontak Baru --- */
+.contact-section {
+    padding: 80px 40px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: var(--primary-blue);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contact-subtitle {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    color: var(--text-medium);
+    font-size: 1.1em;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-card {
+    background-color: var(--bg-white);
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-top: 4px solid var(--secondary-orange);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card i {
+    font-size: 3.5em;
+    color: var(--secondary-orange);
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.contact-card p {
+    font-size: 1.1em;
+    color: var(--text-medium);
+    margin-bottom: 25px;
+}
+
+a.contact-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a.contact-btn:hover {
+    background-color: #002b70;
+    transform: scale(1.05);
+}
+
+/* Memberi gaya pada link navbar yang aktif */
+.navbar .nav-links a.active {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+.order-detail-section {
+    padding: 50px 20px;
+    background-color: var(--bg-light);
+    min-height: 80vh;
+}
+
+.order-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.detail-header h2 {
+    color: var(--primary-blue);
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.detail-card {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    margin-bottom: 25px;
+}
+
+.detail-card h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--secondary-orange);
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.items-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.items-detail-table th, .items-detail-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.items-detail-table th {
+    background-color: #f8f9fa;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.detail-grid-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.total-summary h3 {
+    color: var(--primary-blue);
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.total-amount span {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--text-medium);
+}
+
+.total-amount strong {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.payment-info {
+    font-size: 0.9em;
+    color: #777;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.btn-back-to-account {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-back-to-account:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .detail-grid-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.order-detail-section {
+     background-image: url('../img/pll.png'); /* GANTI PATH INI JIKA GAMBAR ANDA BERBEDA */
+     background-size: cover;
+     background-position: center; /* Efek gambar diam saat di-scroll (opsional) */
+     position: relative; /* Wajib untuk overlay */
+     z-index: 0; /* Pastikan di bawah konten utama */
+     padding-top: 80px; /* Sesuaikan padding atas agar konten tidak tertutup navbar */
+ }
+
+ /* Overlay agar teks mudah dibaca */
+ .order-detail-section::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;/* Warna gelap overlay, sesuaikan opasitasnya */
+     z-index: -1; /* Di bawah background-image */
+ }
+
+ .order-detail-container {
+     position: relative; /* Agar konten berada di atas overlay */
+     z-index: 1;
+     /* Tambahkan sedikit margin atas agar tidak terlalu mepet dengan bagian atas background */
+     margin-top: 20px;
+ }
+
+.btn-view-detail {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--secondary-orange); 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-detail:hover {
+    background-color: #e3770b;
+    color: white;
+    transform: translateY(-2px); 
+}

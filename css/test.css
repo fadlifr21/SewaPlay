@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Contoh font */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0; /* Warna latar belakang dasar */
+    color: #333;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    position: relative;
+    padding-bottom: 50px; /* Ruang untuk gelombang bawah jika ada */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Pastikan konten di atas latar belakang gelombang */
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2; /* Agar teks di atas latar belakang gelombang */
+}
+
+.ps-plus-logo {
+    width: 80px; /* Ukuran logo disesuaikan */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    color: #000;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Cards Section */
+.cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Jarak antar kartu */
+    flex-wrap: wrap; /* Agar kartu bisa pecah baris di layar kecil */
+    padding-bottom: 50px; /* Ruang di bawah kartu */
+}
+
+.card-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Untuk responsivitas */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    width: 350px; /* Lebar kartu disesuaikan */
+    min-height: 400px; /* Tinggi minimum kartu */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-left {
+    background-color: #222; /* Warna latar belakang kartu kiri */
+    color: #fff;
+    padding: 0; /* Gambar latar belakang penuh */
+    display: flex;
+    align-items: flex-end; /* Panah di bawah */
+    justify-content: flex-end; /* Panah di kanan bawah */
+}
+
+.card-left .card-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 15px; /* Sesuaikan radius gambar dengan kartu */
+}
+
+.card-left .arrow-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.card-center {
+    background-color: #000; /* Warna latar belakang kartu tengah */
+    color: #fff;
+    background-image: url('https://via.placeholder.com/350x200'); /* Ganti dengan gambar latar belakang kartu tengah */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Konten di bawah */
+    padding: 0;
+    border-radius: 15px;
+}
+
+.card-center .card-content {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); /* Gradient untuk teks */
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+}
+
+.card-right {
+    background-color: #000; /* Warna latar belakang kartu kanan */
+    color: #fff;
+    background-image: url('https://via.placeholder.com/350x200'); /* Ganti dengan gambar latar belakang kartu kanan */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.card-right .card-content {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+}
+
+.card h2 {
+    font-size: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.card p {
+    font-size: 1em;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.premium-tag, .extra-tag {
+    background-color: #e60023; /* Warna tag Premium */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.extra-tag {
+    background-color: #0070d1; /* Warna tag Extra */
+}
+
+/* Arrow Buttons */
+.arrow-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.card-right .arrow-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+
+/* Wave Background */
+.wave-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* Lebar gelombang dari kanan */
+    height: 100%; /* Tinggi gelombang sesuai tinggi container */
+    background: linear-gradient(to bottom right, #ffe033, #f5d400); /* Gradien kuning */
+    border-bottom-left-radius: 50% 20%; /* Untuk bentuk gelombang */
+    border-top-right-radius: 0%;
+    transform: skewY(-5deg); /* Memberi sedikit kemiringan */
+    transform-origin: top right;
+    z-index: 0; /* Di belakang konten */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .cards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Lebih lebar di layar kecil */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .wave-background {
+        width: 100%;
+        height: 400px; /* Tinggi tetap untuk mobile */
+        transform: skewY(-3deg);
+        border-bottom-left-radius: 30% 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .card {
+        min-height: 350px;
+    }
+
+    .card h2 {
+        font-size: 1.5em;
+    }
+
+    .card p {
+        font-size: 0.9em;
+    }
+
+    .arrow-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .card {
+        width: 95%;
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .card-left .arrow-button,
+    .card-right .arrow-button {
+        bottom: 15px;
+        left: 15px; /* Atau kanan 15px */
+    }
+}
